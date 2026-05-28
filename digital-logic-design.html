@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Logic Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#071425,#0b1624,#102a43);
+color:white;
+min-height:100vh;
+}
+
+header{
+padding:20px 8%;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(20px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#00d4ff;
+}
+
+.nav-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 22px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+}
+
+.sem-btn{
+background:#d6b15f;
+color:black;
+}
+
+.home-btn{
+background:#00d4ff;
+color:white;
+}
+
+.hero{
+padding:80px 8%;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+background:linear-gradient(90deg,#00d4ff,#ffffff,#d6b15f);
+-webkit-background-clip:text;
+color:transparent;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+max-width:1000px;
+margin:auto;
+line-height:1.8;
+opacity:.9;
+}
+
+.container{
+padding:0 8% 80px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+margin-bottom:25px;
+}
+
+.card h2{
+color:#00d4ff;
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+table th{
+background:#00d4ff;
+color:black;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.skill{
+background:rgba(255,255,255,.05);
+padding:18px;
+border-radius:15px;
+}
+
+.analytics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.analytics-card{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.analytics-card h3{
+font-size:28px;
+color:#d6b15f;
+margin-bottom:10px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Digital Logic Design
+</div>
+
+<div class="nav-buttons">
+
+<button class="btn sem-btn"
+onclick="window.location.href='semester2.html'">
+⬅ Back to Semester
+</button>
+
+<button class="btn home-btn"
+onclick="window.location.href='index.html'">
+🏠 Home
+</button>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>Digital Logic Design</h1>
+
+<p>
+
+Digital Logic Design is the foundation of modern electronic systems,
+microprocessors, embedded devices and IoT hardware. This course teaches
+students number systems, Boolean algebra, logic gates, combinational circuits,
+sequential circuits, flip-flops, counters and digital system design.
+Understanding digital logic is essential for building smart devices,
+embedded controllers and automation systems.
+
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📘 Course Information</h2>
+
+<table>
+
+<tr>
+<th>Field</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Subject Code</td>
+<td>IOT202</td>
+</tr>
+
+<tr>
+<td>Semester</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Credits</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>Internet of Things</td>
+</tr>
+
+<tr>
+<td>Course Type</td>
+<td>Core Subject</td>
+</tr>
+
+<tr>
+<td>Duration</td>
+<td>16 Weeks</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>⚡ What You Will Learn</h2>
+
+<div class="skills">
+
+<div class="skill">Number Systems</div>
+<div class="skill">Boolean Algebra</div>
+<div class="skill">Logic Gates</div>
+<div class="skill">Karnaugh Maps</div>
+<div class="skill">Combinational Circuits</div>
+<div class="skill">Sequential Circuits</div>
+<div class="skill">Flip Flops</div>
+<div class="skill">Counters & Registers</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Marks Distribution</h2>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Marks</th>
+</tr>
+
+<tr>
+<td>Internal Assessment</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Assignments</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Quiz</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Laboratory Work</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Semester Examination</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td><b>Total</b></td>
+<td><b>100</b></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>🏆 Course Outcomes</h2>
+
+<ul>
+
+<li>Understand digital electronics fundamentals.</li>
+
+<li>Design circuits using logic gates.</li>
+
+<li>Apply Boolean algebra and K-Maps.</li>
+
+<li>Develop combinational and sequential circuits.</li>
+
+<li>Use digital logic concepts in IoT hardware systems.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📚 Syllabus Units</h2>
+
+<table>
+
+<tr>
+<th>Unit</th>
+<th>Topics</th>
+</tr>
+
+<tr>
+<td>Unit 1</td>
+<td>Number Systems & Binary Codes</td>
+</tr>
+
+<tr>
+<td>Unit 2</td>
+<td>Boolean Algebra & Logic Gates</td>
+</tr>
+
+<tr>
+<td>Unit 3</td>
+<td>Karnaugh Maps & Simplification</td>
+</tr>
+
+<tr>
+<td>Unit 4</td>
+<td>Combinational Circuits</td>
+</tr>
+
+<tr>
+<td>Unit 5</td>
+<td>Sequential Circuits & Flip-Flops</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Career Applications</h2>
+
+<div class="skills">
+
+<div class="skill">Embedded Systems</div>
+<div class="skill">IoT Hardware Design</div>
+<div class="skill">Electronics Engineering</div>
+<div class="skill">Robotics</div>
+<div class="skill">Automation Systems</div>
+<div class="skill">VLSI Design</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Subject Analytics</h2>
+
+<div class="analytics">
+
+<div class="analytics-card">
+<h3>⭐⭐⭐⭐☆</h3>
+<p>Difficulty Level</p>
+</div>
+
+<div class="analytics-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>Industry Relevance</p>
+</div>
+
+<div class="analytics-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>Hardware Focus</p>
+</div>
+
+<div class="analytics-card">
+<h3>100</h3>
+<p>Total Marks</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+GM University • Department of Internet of Things
+
+<br><br>
+
+Digital Logic Design Academic Repository
+
+</footer>
+
+</body>
+</html>

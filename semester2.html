@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semester 2 | Department of Internet of Things</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#071425,#0b1624,#102a43);
+min-height:100vh;
+color:white;
+padding:30px;
+animation:pageLoad 1s ease;
+}
+
+@keyframes pageLoad{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.back-btn{
+background:linear-gradient(135deg,#d6b15f,#f4d03f);
+border:none;
+padding:14px 24px;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+display:inline-flex;
+align-items:center;
+gap:10px;
+transition:.4s;
+margin-bottom:40px;
+}
+
+.back-btn:hover{
+transform:translateX(-8px);
+box-shadow:0 10px 25px rgba(214,177,95,.4);
+}
+
+.banner{
+text-align:center;
+margin-bottom:50px;
+}
+
+.banner h1{
+font-size:60px;
+color:#d6b15f;
+}
+
+.banner p{
+opacity:.8;
+margin-top:10px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:50px;
+}
+
+.stat{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.stat h2{
+font-size:35px;
+color:#d6b15f;
+}
+
+.subject-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.subject-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:25px;
+transition:.4s;
+}
+
+.subject-card:hover{
+transform:translateY(-10px);
+border:1px solid #d6b15f;
+box-shadow:0 15px 35px rgba(0,212,255,.15);
+}
+
+.subject-icon{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.subject-card h3{
+color:#d6b15f;
+margin-bottom:10px;
+}
+
+.subject-card p{
+opacity:.85;
+line-height:1.6;
+}
+
+.subject-btn{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#00d4ff,#008cff);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.subject-btn:hover{
+transform:scale(1.03);
+}
+
+footer{
+margin-top:60px;
+text-align:center;
+opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="window.location.href='index.html'">
+← Back to Dashboard
+</button>
+
+<div class="banner">
+<h1>Semester 2</h1>
+<p>Core Computing & IoT Fundamentals</p>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>6</h2>
+<p>Subjects</p>
+</div>
+
+<div class="stat">
+<h2>24</h2>
+<p>Total Credits</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Repository Coverage</p>
+</div>
+
+</div>
+
+<div class="subject-grid">
+
+<div class="subject-card">
+<div class="subject-icon">📊</div>
+<h3>Data Structures</h3>
+<p>Learn arrays, stacks, queues, linked lists and algorithms.</p>
+<button class="subject-btn"
+onclick="window.location.href='data-structures.html'">
+Explore Subject
+</button>
+</div>
+
+<div class="subject-card">
+<div class="subject-icon">⚡</div>
+<h3>Digital Logic Design</h3>
+<p>Understand logic gates, combinational and sequential circuits.</p>
+<button class="subject-btn"
+onclick="window.location.href='digital-logic-design.html'">
+Explore Subject
+</button>
+</div>
+
+<div class="subject-card">
+<div class="subject-icon">🐍</div>
+<h3>Python Programming</h3>
+<p>Develop applications and automation using Python.</p>
+<button class="subject-btn"
+onclick="window.location.href='python-programming.html'">
+Explore Subject
+</button>
+</div>
+
+<div class="subject-card">
+<div class="subject-icon">🌍</div>
+<h3>Computer Networks</h3>
+<p>Study communication protocols and networking fundamentals.</p>
+<button class="subject-btn">Explore Subject</button>
+</div>
+
+<div class="subject-card">
+<div class="subject-icon">📡</div>
+<h3>Sensors & Actuators</h3>
+<p>Explore hardware components used in IoT systems.</p>
+<button class="subject-btn">Explore Subject</button>
+</div>
+
+<div class="subject-card">
+<div class="subject-icon">🌱</div>
+<h3>Environmental Studies</h3>
+<p>Understand sustainability and environmental impact.</p>
+<button class="subject-btn">Explore Subject</button>
+</div>
+
+</div>
+
+<footer>
+<p>GM University • Department of Internet of Things</p>
+</footer>
+
+</body>
+</html>
