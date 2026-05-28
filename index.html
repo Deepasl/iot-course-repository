@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GM University | Department of Internet of Things</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#0b1624;
+color:white;
+overflow-x:hidden;
+}
+
+#splash{
+position:fixed;
+inset:0;
+background:#081120;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:hideSplash 4s forwards;
+}
+
+#splash img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+animation:zoom 2s infinite alternate;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+@keyframes hideSplash{
+0%,85%{opacity:1;}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(20px);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+.nav-link{
+text-decoration:none;
+color:white;
+font-weight:500;
+position:relative;
+transition:.3s;
+}
+
+.nav-link::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:#00d4ff;
+transition:.3s;
+}
+
+.nav-link:hover::after{
+width:100%;
+}
+
+.nav-link:hover{
+color:#00d4ff;
+}
+
+.active{
+color:#d6b15f;
+}
+
+.nav-btn{
+background:linear-gradient(
+135deg,
+#00d4ff,
+#008cff
+);
+border:none;
+padding:12px 22px;
+border-radius:50px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.nav-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,212,255,.3);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:55px;
+height:55px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo h2{
+color:#d6b15f;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.animated-title{
+font-size:clamp(32px,6vw,60px);
+background:linear-gradient(
+90deg,
+#d6b15f,
+#ffffff,
+#00d4ff,
+#d6b15f
+);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+from{background-position:0%;}
+to{background-position:300%;}
+}
+
+.hero p{
+max-width:700px;
+margin:20px auto;
+font-size:18px;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:10px;
+background:#d6b15f;
+font-weight:bold;
+cursor:pointer;
+}
+
+.section{
+padding:80px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#d6b15f;
+margin-bottom:40px;
+}
+
+.search{
+text-align:center;
+margin-bottom:30px;
+}
+
+.search input{
+width:100%;
+max-width:700px;
+max-width:90%;
+padding:15px;
+border:none;
+border-radius:10px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(12px);
+}
+
+.card h2{
+font-size:45px;
+color:#d6b15f;
+}
+
+.semesters{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.sem{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.sem:hover{
+transform:translateY(-8px);
+border:1px solid #d6b15f;
+}
+
+.sem h3{
+color:#d6b15f;
+margin-bottom:10px;
+}
+
+#subjects{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.subject-card{
+background:rgba(255,255,255,.05);
+padding:20px;
+border-radius:15px;
+}
+
+footer{
+background:#050b15;
+padding:40px;
+text-align:center;
+}
+
+@media (max-width:768px){
+
+header{
+padding:15px;
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.logo{
+flex-direction:column;
+gap:10px;
+}
+
+.logo img{
+width:70px;
+height:70px;
+}
+
+.logo h2{
+font-size:26px;
+}
+
+.logo p{
+font-size:14px;
+}
+
+.navbar{
+display:flex !important;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+}
+
+.nav-link{
+font-size:14px;
+}
+
+.nav-btn{
+padding:10px 18px;
+font-size:14px;
+}
+
+.hero{
+height:auto;
+min-height:100vh;
+padding:100px 20px;
+}
+
+.animated-title{
+font-size:36px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.8;
+}
+
+.btn{
+width:100%;
+max-width:280px;
+}
+
+.title{
+font-size:30px;
+}
+
+.analytics-grid{
+grid-template-columns:1fr;
+}
+
+.analytics-card{
+padding:25px;
+}
+
+.analytics-card h2{
+font-size:42px;
+}
+
+.semesters{
+grid-template-columns:1fr;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.search input{
+width:100%;
+max-width:100%;
+}
+
+footer{
+padding:30px 20px;
+font-size:14px;
+}
+
+}
+.contact-section{
+padding:100px 8%;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.contact-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:25px;
+text-align:center;
+transition:.4s;
+}
+
+.contact-card:hover{
+transform:translateY(-10px);
+border:1px solid #00d4ff;
+box-shadow:0 20px 40px rgba(0,212,255,.15);
+}
+
+.contact-icon{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.contact-card h3{
+color:#d6b15f;
+margin-bottom:10px;
+}
+.analytics-section{
+padding:100px 8%;
+text-align:center;
+}
+
+.analytics-subtitle{
+max-width:700px;
+margin:auto;
+opacity:.8;
+margin-bottom:50px;
+}
+
+.analytics-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.analytics-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:25px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.analytics-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,212,255,.15);
+}
+
+.analytics-card h2{
+font-size:55px;
+color:#00d4ff;
+margin-bottom:10px;
+}
+
+.analytics-card h3{
+color:#d6b15f;
+margin-bottom:10px;
+}
+
+.achievement-banner{
+margin-top:60px;
+padding:40px;
+border-radius:25px;
+background:linear-gradient(
+135deg,
+rgba(0,212,255,.1),
+rgba(214,177,95,.1)
+);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.achievement-banner h2{
+color:#00d4ff;
+margin-bottom:15px;
+}
+html{
+scroll-behavior:smooth;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+table{
+display:block;
+overflow-x:auto;
+white-space:nowrap;
+}
+</style>
+</head>
+
+<body>
+
+<div id="splash">
+<img src="logo.jpg" alt="logo">
+<h1 style="margin-top:20px;color:#d6b15f;">GM University</h1>
+<p>Department of Internet of Things</p>
+</div>
+
+<header>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="logo">
+<img src="logo.jpg">
+<div>
+<h2>GM University</h2>
+<p>Department of Internet of Things</p>
+</div>
+</div>
+
+<nav class="navbar">
+
+<a href="#" class="nav-link active">Home</a>
+
+<a href="#analytics" class="nav-link">
+Analytics
+</a>
+
+<a href="#semester" class="nav-link">
+Semesters
+</a>
+
+<a href="#contact" class="nav-link">
+Contact
+</a>
+
+<button class="nav-btn"
+onclick="document.getElementById('semester').scrollIntoView({behavior:'smooth'})">
+Explore 🚀
+</button>
+
+</nav>
+
+</header>
+
+<section class="hero">
+<div>
+<h1 class="animated-title">
+Department of Internet of Things
+</h1>
+
+<p>
+Explore semester-wise learning, modern technologies,
+AI, IoT, cloud computing, embedded systems and
+future-ready engineering education.
+</p>
+
+<button class="btn" onclick="document.getElementById('semester').scrollIntoView({behavior:'smooth'})">
+    Explore Now 🚀
+</button>
+</div>
+</section>
+
+<section id="analytics" class="analytics-section">
+
+<h2 class="title">Department Insights</h2>
+
+<p class="analytics-subtitle">
+Empowering innovation through connected technologies,
+research and future-ready learning.
+</p>
+
+<div class="analytics-grid">
+
+<div class="analytics-card">
+<h2 class="counter" data-target="6">0</h2>
+<h3>Semesters</h3>
+<p>Structured academic progression</p>
+</div>
+
+<div class="analytics-card">
+<h2 class="counter" data-target="36">0</h2>
+<h3>Subjects</h3>
+<p>Industry-focused curriculum</p>
+</div>
+
+<div class="analytics-card">
+<h2 class="counter" data-target="12">0</h2>
+<h3>Faculty Members</h3>
+<p>Expert educators & mentors</p>
+</div>
+
+<div class="analytics-card">
+<h2 class="counter" data-target="100">0</h2>
+<h3>% Digital Learning</h3>
+<p>Modern learning experience</p>
+</div>
+
+</div>
+
+<div class="achievement-banner">
+
+<h2>🚀 Future Ready Engineers</h2>
+
+<p>
+Preparing students for Artificial Intelligence,
+Cloud Computing, Cyber Security, IoT and
+Industry 4.0 technologies.
+</p>
+
+</div>
+
+</section>
+
+<section class="section" id="semester">
+
+<h2 class="title">Semester Explorer</h2>
+
+<div class="search">
+<input type="text" id="search" placeholder="Search Semester...">
+</div>
+
+<div class="semesters">
+
+
+<div class="sem" onclick="window.location.href='semester1.html'">
+<h3>Semester 1</h3>
+</div>
+
+<div class="sem" onclick="window.location.href='semester2.html'">
+<h3>Semester 2</h3>
+</div>
+
+<div class="sem" onclick="window.location.href='semester3.html'">
+<h3>Semester 3</h3>
+</div>
+<div class="sem" onclick="window.location.href='semester4.html'">
+<h3>Semester 4</h3>
+</div>
+
+<div class="sem" onclick="window.location.href='semester5.html'">
+<h3>Semester 5</h3>
+</div>
+
+<div class="sem" onclick="window.location.href='semester6.html'">
+<h3>Semester 6</h3>
+</div>
+
+</div>
+
+<div id="subjects"></div>
+
+</section>
+
+
+<section id="contact" class="contact-section">
+
+<h2 class="title">Contact Information</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<div class="contact-icon">📧</div>
+<h3>Email</h3>
+<p>info@gmu.ac.in</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-icon">📱</div>
+<h3>Instagram</h3>
+<p>@gmuniversity_official_dvg</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-icon">☎️</div>
+<h3>Phone</h3>
+<p>+91 8192-233345</p>
+</div>
+
+</div>
+
+</section>
+<footer>
+
+<h3>GM University</h3>
+
+<p>Department of Internet of Things</p>
+
+<p>
+Academic Excellence • Innovation • Research
+</p>
+
+<p>
+© 2026 GM University. All Rights Reserved.
+</p>
+
+</footer>
+<script>
+
+document.querySelectorAll(".counter").forEach(counter=>{
+let target=+counter.dataset.target;
+let count=0;
+
+function update(){
+count+=Math.ceil(target/80);
+
+if(count>=target){
+counter.innerText=target;
+}else{
+counter.innerText=count;
+requestAnimationFrame(update);
+}
+}
+update();
+});
+
+function showSemester(sem){
+
+let subjects=document.getElementById("subjects");
+
+if(sem===4){
+subjects.innerHTML=`
+<div class="subject-card">Artificial Intelligence & Machine Learning</div>
+<div class="subject-card">Software Development Methodologies</div>
+<div class="subject-card">Discrete Structures for Computing</div>
+<div class="subject-card">Unstructured Data & NoSQL Technologies</div>
+<div class="subject-card">Automata Theory & Compiler Design</div>
+<div class="subject-card">Project Based Learning on Machine Learning</div>
+`;
+}else{
+subjects.innerHTML=`
+<div class="subject-card">Subjects for Semester ${sem}</div>
+`;
+}
+
+}
+
+document.getElementById("search").addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+document.querySelectorAll(".sem").forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(value)
+? "block" : "none";
+});
+});
+
+
+const counters =
+document.querySelectorAll('.counter');
+
+const startCounter = () => {
+
+counters.forEach(counter => {
+
+const target =
++counter.getAttribute('data-target');
+
+let count = 0;
+
+const update = () => {
+
+count += Math.ceil(target/80);
+
+if(count >= target){
+
+counter.innerText = target;
+
+}else{
+
+counter.innerText = count;
+
+requestAnimationFrame(update);
+
+}
+
+};
+
+update();
+
+});
+
+};
+
+const analytics =
+document.querySelector('#analytics');
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+startCounter();
+
+observer.disconnect();
+
+}
+
+});
+
+});
+
+observer.observe(analytics);
+
+
+
+</script>
+
+</body>
+</html>
